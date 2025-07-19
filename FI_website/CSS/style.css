@@ -54,6 +54,22 @@ li a:hover, li a:focus {
     display: inline-block;
 }
 
+img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.float{
+    border: 2px solid black;
+    width: 30vw;
+    height: auto;
+    margin: 1rem;
+}
+
+.textLeft {
+    float: left;
+}
+
 .container {
     border: double black;
     font-size: 1.5rem;
