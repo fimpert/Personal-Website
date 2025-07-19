@@ -2,10 +2,11 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 image {
-    display = block;
+    display: block;
     max-width: 100%;
     max-height: auto;
 }
@@ -84,15 +85,76 @@ li a:hover, li a:focus {
     }
  */
 
+ /* start intro section */
+
+ .introParentContainer{
+    /* border: blue 3px solid; */
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height:200vh;
+
+ }
+
  .introText {
     text-align: center;
-    font-size: 340%;
+    font-weight: 500;
+    font-size: 13rem;
     text-transform: uppercase;
-    background-image: url("../Files/Flower\40.jpg");
-    background-size: 100%;
+    /* background-image: url("../Files/Flower\ 40.jpg");
+    background-position: 50% 18%;
     -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.295);
+    -webkit-background-fill-color: transparent; */
+    color:rgba(239, 227, 243, 0.699);
+    display:flex;
  }
+
+ .introContainer {
+    /* font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: .1em; */
+    /* display: flex; */
+    position: sticky;
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    background-color:#020b01;
+    background-image: url("../Files/Flower\ 40.jpg");
+    background-position: 0% 0%;
+    
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+}
+
+.introText:hover {
+    text-align: center;
+    font-weight: 500;
+    font-size: 13rem;
+    text-transform: uppercase;
+    background-image: url("../Files/Headshot.JPG");
+    background-position: 50% 18%;
+    -webkit-background-clip: text;
+    -webkit-background-fill-color: transparent;
+    background-blend-mode: overlay;
+    color:rgba(239, 227, 243, 0.301);
+    display:flex;
+ }
+
+ /* TODO: FIX the introductary banner hover feature and add blur (also make text hover earlier) */
+/* .introContainer:hover {
+    background-color: #020b01;
+    background-image: url("../Files/Flower\ 40.jpg");
+    background-position: 50% 18%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+} */
+
+/* end intro section */
+
 
  /* start image wrap*/
 .float{
@@ -112,16 +174,8 @@ li a:hover, li a:focus {
 
 /* end image wrap */
 
-/* .container {
-    border: double black;
-    font-size: 1.5rem;
-    margin: 1.4em 2em;
-    padding: 1.5em auto;
-    text-transform: capitalize;
-    letter-spacing: .1em;
-}
- */
 
-input, button {
+
+/* input, button {
     font: inherit;
-}
+} */
