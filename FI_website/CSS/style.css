@@ -1,9 +1,30 @@
+/* beginning style reset` */
 * {
     padding: 0;
     margin: 0;
 }
 
+image {
+    display = block;
+    max-width: 100%;
+    max-height: auto;
+}
+
+/* end style reset */
+
+/* beginning utility classes */
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -99999px;
+}
+
+/* end utility classes */
 html {
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #AEBD93;
     color: #192A18;
@@ -43,6 +64,7 @@ li {
     color: antiquewhite;
 }
 
+/* start header */
 li a, li a:visited {
     text-decoration: none;
     color: antiquewhite;
@@ -54,23 +76,43 @@ li a:hover, li a:focus {
     display: inline-block;
 }
 
-img {
+/* end header */
+
+/* img {
     max-width: 100%;
     max-height: auto;
-}
+    }
+ */
 
+ .introText {
+    text-align: center;
+    font-size: 340%;
+    text-transform: uppercase;
+    background-image: url("../Files/Flower\40.jpg");
+    background-size: 100%;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.295);
+ }
+
+ /* start image wrap*/
 .float{
     border: 2px solid black;
     width: 30vw;
     height: auto;
     margin: 1rem;
+    justify-content: center;
+    padding: 0rem;
+    align-items: center;
+    display: flex;
 }
 
 .textLeft {
     float: left;
 }
 
-.container {
+/* end image wrap */
+
+/* .container {
     border: double black;
     font-size: 1.5rem;
     margin: 1.4em 2em;
@@ -78,9 +120,8 @@ img {
     text-transform: capitalize;
     letter-spacing: .1em;
 }
+ */
 
-
-/* 
 input, button {
     font: inherit;
-} */
+}
