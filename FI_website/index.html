@@ -16,9 +16,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <link rel="stylesheet" href="CSS/style.css"> 
         <title> FI's Blog </title>
+
+        
     </head>
 
     <body>
+        <!--
         <header>
             <ul>
                 <li> <a href="index.html">  Homepage </h2> </a> </li>
@@ -26,29 +29,28 @@
                 <li> <a href="projectIndex.html"> Project Index </a> </li>
                 <li> <a href="resources.html"> Personal Resources </a> </li>
             </ul>
-            </header>
+            </header> -->
         <main>
-            <div class="introParentContainer">
+            <div class="introScreen">
+  <a href="aboutMe.html">
+    <img src="Files/Flower 40.jpg" alt="A REALLY Pretty Flower" class="fullscreenImage">
+    <p class="introText">Welcome!</p>
+  </a>
+</div>
 
-                 <div class="introContainer">
-                    <p class="introText"> Welcome!</p>
-                 </div>
-
-                <!-- <div> <image class="introContainer" src="Files/Flower 40.jpg" alt="test">
-                    <p class="introText"> Welcome!</p> </image>
-                </div> -->
-            </div>
-            
-            <br>
             
 <!-- 
              <p> I am Fiona Impert</p> -->
             
 
         </main>    
-        <footer>
 
-        </footer>
-
+        <script>
+  // Wait 5 seconds (5000 ms) and then go to aboutMe.html
+  setTimeout(function() {
+    window.location.href = "aboutMe.html";
+  }, 10000);
+</script>
+      
     </body>
 </html>
