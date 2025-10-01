@@ -15,7 +15,7 @@
                 <li> <a href="resources.html"> Personal Resources </a> </li>
             </ul>
             </header>
-    <p> <h2> About Me </h2> </p>
+
         <!-- introductary articles about my life-->
 
         <!-- TODO: 
@@ -25,7 +25,7 @@
         -->
         <article>
             <section>
-                <h3> Who am I?</h3>
+                <h2> Who am I?</h2>
                    <div class="float"> <img src="Files/Headshot.JPG" alt="this is what I look like"> </image>
                    
                     <div class="text-content"> 
@@ -33,16 +33,141 @@
                         <p> Hello! My name is Fiona Impert, and I am currently studying computer science at the University of Washington. Some of my previous accomplishments include winning an international robotics competition, leading a debate squad 25 strong, and contributing to many collaborative coding projects in the field of website development and app design. </p>
                         <p> Professionally, I have demonstrated my leadership and adaptability through roles ranging from managing a retail space to coordinating intern teams in tech </p>   
                         <p> Outside of academics and work, I like to spend time drawing, playing tennis, and practicing my viola. </p>
-                    </div>
-                </div>  
-            </section>
-
-                   
-                    
-            <section>
-                <h3> Hire me! (please) </h3>
-                <a href="Files/Resume - Fiona Impert.docx"> My Resume!! </a>
+                        <h3> Interested in learning more? </h3>
+                        
+                        <!-- adapted from #3 - Modern Download Button - https://www.subframe.com/tips/css-download-button-examples -->
+                       <div class="material-item">
+                                <div class="material-info">
+                                    <div class="material-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M17,19H7V5H17M17,3H7A2,2 0 0,0 5,5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V5A2,2 0 0,0 17,3Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="material-details">
+                                        <h3>Download My Resume</h3>
+                                    </div>
+                                </div>
+                                <button class="download-btn" data-file="resume.docx">
+                                    <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+                                    </svg>
+                                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    </svg>
+                                    <span>Download</span>
+                                </button>
+                            </div>
+                
+                        <div class="notification">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                            </svg>
+                            <span class="notification-text">Resume downloaded successfully</span>
+                        </div>
+                         <!-- adapted from #3 - Modern Download Button - https://www.subframe.com/tips/css-download-button-examples -->
+                        
             </section>
         </article>
+
+     <script>
+        //start adaptation from 3) Modern Download Button Design https://www.subframe.com/tips/css-download-button-examples
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.download-btn');
+            const notification = document.querySelector('.notification');
+            const notificationText = document.querySelector('.notification-text');
+
+            button.addEventListener('click', () => {
+                button.classList.add('success');
+                notification.classList.add('show');
+
+                setTimeout(() => { button.classList.remove('success'); }, 2000);
+                setTimeout(() => { notification.classList.remove('show'); }, 3000);
+
+                const fileUrl = button.getAttribute('data-file');
+                const link = document.createElement('a');
+                link.href = fileUrl;
+                link.download = fileUrl.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+        //end adaptation from 3) Modern Download Button Design https://www.subframe.com/tips/css-download-button-examples
+       
+
+         const backToTopButton = document.getElementById('back-to-top');
+
+        // Show button after scrolling down 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+            backToTopButton.style.display = "flex"; // flex to center arrow
+            } else {
+            backToTopButton.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
 </body>
+
+<footer class="site-footer">
+  <footer class="footer">
+  <div class="footer-desktop">
+    <div class="about-section">
+      <h3>About Me</h3>
+      <p>Some information about you or your website.</p>
+    </div>
+
+    <div class="projects-section">
+      <h3>Projects</h3>
+      <ul>
+        <li><a href="#">Project One</a></li>
+        <li><a href="#">Project Two</a></li>
+      </ul>
+    </div>
+
+    <div class="connect-section">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+          <img src="github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+          <img src="instagram-icon.svg" alt="Instagram">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <img src="linkedin-icon.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile-only Connect section -->
+  <div class="footer-mobile">
+    <div class="connect-section">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+          <img src="github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+          <img src="instagram-icon.svg" alt="Instagram">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <img src="linkedin-icon.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button id="back-to-top" title="Back to Top">&#8679;</button>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Fiona Impert. All rights reserved.</p>
+  </div>
+</footer>
 </html> 
