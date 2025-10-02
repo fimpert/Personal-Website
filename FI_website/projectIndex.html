@@ -3,41 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <title> FI's Project Index </title>
+    <title> Project Index </title>
 </head>
 <body>
-    <header>
-            <ul>
-                <li> <a href="index.html">  Homepage </h2> </a> </li>
-                <li> <a href="aboutMe.html"> About Me </a> </li>
-                <li> <a href="projectIndex.html"> Project Index </a> </li>
-                <li> <a href="resources.html"> Personal Resources </a> </li>
-            </ul>
-            </header>
-    <main>
-        <table>
+     <!-- Header -->
+    <header class="site-header">
+        <ul class="header-nav">
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="projectIndex.html">Project Index</a></li>
+        </ul>
+    </header>
+
+
+    <main class="project-index flex-center padding-lg">
+        <table class=" table-responsive">
+            <caption class="text-center"><h2>Project Index</h2></caption>
             <thead> 
-            <caption> <h2> Project Index </h2> </caption>
                 <tr>
-                    <th> Project Name </th>
-                    <th> Collaborators </th>
-                    <th> Dates Finalized </th>
-                    <th> Links </th>
-                  </tr>
+                    <th>Project Name</th>
+                    <th>Collaborators</th>
+                    <th>Dates Finalized</th>
+                    <th>Links</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td> Personal Website </td>
-                    <td> Fiona Impert </td>
-                    <td> TBD </td>
-                    <td> http://127.0.0.1:5500/index.html </td>
+                    <td> Ex. Personal Website</td>
+                    <td>Fiona Impert</td>
+                    <td>09/30/2025</td>
+                    <td><a href="index.html" target="_blank"> fionaimpert.com </a></td>
                 </tr>
             </tbody>
         </table>
     </main>
-    <footer>
 
-    </footer> 
+    <footer class="site-footer">
+        <div class="footer-desktop">
+            <div class="about-section">
+            <h3>About Me</h3>
+            <p> UW student looking for work ˶ᵔ ᵕ ᵔ˶ </p>
+            </div>
+
+            <div class="projects-section">
+            <h3>Projects</h3>
+                <ul>
+                    <li> <a href="https://github.com/Eesha-Jain/book-swap"> BookSwap </a></li>
+                </ul>
+
+            </div>
+
+            <div class="connect-section">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="https://github.com/fimpert" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                </a>
+                <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+            <!--    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i> -->
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Mobile-only footer -->
+        <div class="footer-mobile">
+            <div class="connect-section">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="https://github.com/fimpert" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                </a>
+                <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+            <!--   <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i> -->
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fiona Impert. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

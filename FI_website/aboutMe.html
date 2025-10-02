@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <title> About Me! </title>
 </head>
 <body>
-    <header>
-            <ul>
-                <!-- <li> <a href="index.html">  Homepage </h2> </a> </li> -->
-                <li> <a href="aboutMe.html"> About Me </a> </li>
-                <li> <a href="projectIndex.html"> Project Index </a> </li>
-                <li> <a href="resources.html"> Personal Resources </a> </li>
-            </ul>
-            </header>
+    <!-- Header -->
+    <header class="site-header">
+        <ul class="header-nav">
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="projectIndex.html">Project Index</a></li>
+        </ul>
+    </header>
 
-        <!-- introductary articles about my life-->
-
-        <!-- TODO: 
-        add resume to inside the float box, realign so thats the main thing in the webpage
-        make a buttom that downloads resume, make everything look clean 
-        
-        -->
+    <main>
         <article>
             <section>
-                <h2> Who am I?</h2>
                    <div class="float"> <img src="Files/Headshot.JPG" alt="this is what I look like"> </image>
-                   
                     <div class="text-content"> 
                       <!-- <div class="image textLeft"> test </div>  -->
+                        <h3> Who am I?</h3>
                         <p> Hello! My name is Fiona Impert, and I am currently studying computer science at the University of Washington. Some of my previous accomplishments include winning an international robotics competition, leading a debate squad 25 strong, and contributing to many collaborative coding projects in the field of website development and app design. </p>
                         <p> Professionally, I have demonstrated my leadership and adaptability through roles ranging from managing a retail space to coordinating intern teams in tech </p>   
                         <p> Outside of academics and work, I like to spend time drawing, playing tennis, and practicing my viola. </p>
                         <h3> Interested in learning more? </h3>
                         
+                                
                         <!-- adapted from #3 - Modern Download Button - https://www.subframe.com/tips/css-download-button-examples -->
                        <div class="material-item">
                                 <div class="material-info">
@@ -44,10 +38,10 @@
                                         </svg>
                                     </div>
                                     <div class="material-details">
-                                        <h3>Download My Resume</h3>
+                                        <h3>Download My Resume </h3>
                                     </div>
                                 </div>
-                                <button class="download-btn" data-file="resume.docx">
+                                  <button class="download-btn" data-file="Files/Resume_Tech.docx" data-download="Fiona_Resume.docx">
                                     <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
                                     </svg>
@@ -56,6 +50,7 @@
                                     </svg>
                                     <span>Download</span>
                                 </button>
+
                             </div>
                 
                         <div class="notification">
@@ -68,106 +63,113 @@
                         
             </section>
         </article>
+    </main>
 
-     <script>
-        //start adaptation from 3) Modern Download Button Design https://www.subframe.com/tips/css-download-button-examples
-        document.addEventListener('DOMContentLoaded', () => {
-            const button = document.querySelector('.download-btn');
-            const notification = document.querySelector('.notification');
-            const notificationText = document.querySelector('.notification-text');
+     <button id="back-to-top" title="Back to Top">&#8679;</button>
 
-            button.addEventListener('click', () => {
-                button.classList.add('success');
-                notification.classList.add('show');
+    
+    <script>
+      document.querySelectorAll(".download-btn").forEach(btn => {
+          btn.addEventListener("click", function() {
+              // Animate button
+              this.classList.add("success");
+              
+              // Trigger download
+              const file = this.dataset.file;
+              const downloadName = this.dataset.download;
+              const link = document.createElement("a");
+              link.href = file;
+              link.download = downloadName;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              
+              // Show notification
+              const notification = document.querySelector(".notification");
+              const notificationText = document.querySelector(".notification-text");
+              notificationText.textContent = "Resume downloaded successfully";
+              notification.classList.add("show");
 
-                setTimeout(() => { button.classList.remove('success'); }, 2000);
-                setTimeout(() => { notification.classList.remove('show'); }, 3000);
+              // Reset button
+              setTimeout(() => this.classList.remove("success"), 2000);
+              setTimeout(() => notification.classList.remove("show"), 3000);
+          });
+      });
 
-                const fileUrl = button.getAttribute('data-file');
-                const link = document.createElement('a');
-                link.href = fileUrl;
-                link.download = fileUrl.split('/').pop();
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("back-to-top");
+
+        // Show button after scrolling
+        window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            button.style.display = "flex";
+        } else {
+            button.style.display = "none";
+        }
         });
-        //end adaptation from 3) Modern Download Button Design https://www.subframe.com/tips/css-download-button-examples
-       
 
-         const backToTopButton = document.getElementById('back-to-top');
-
-        // Show button after scrolling down 300px
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-            backToTopButton.style.display = "flex"; // flex to center arrow
-            } else {
-            backToTopButton.style.display = "none";
-            }
+        // Scroll to top
+        button.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+         });
         });
-
-        // Smooth scroll to top
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
     </script>
-</body>
 
 <footer class="site-footer">
-  <footer class="footer">
   <div class="footer-desktop">
     <div class="about-section">
       <h3>About Me</h3>
-      <p>Some information about you or your website.</p>
+      <p> UW student looking for work ˶ᵔ ᵕ ᵔ˶ </p>
     </div>
 
     <div class="projects-section">
       <h3>Projects</h3>
-      <ul>
-        <li><a href="#">Project One</a></li>
-        <li><a href="#">Project Two</a></li>
-      </ul>
+        <ul>
+            <li> <a href="https://github.com/Eesha-Jain/book-swap"> BookSwap </a></li>
+        </ul>
+
     </div>
 
     <div class="connect-section">
       <h3>Connect</h3>
       <div class="social-icons">
-        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-          <img src="github-icon.svg" alt="GitHub">
+        <a href="https://github.com/fimpert" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
         </a>
-        <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
-          <img src="instagram-icon.svg" alt="Instagram">
+        <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-          <img src="linkedin-icon.svg" alt="LinkedIn">
+      <!--    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> -->
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Mobile-only Connect section -->
+  <!-- Mobile-only footer -->
   <div class="footer-mobile">
     <div class="connect-section">
       <h3>Connect</h3>
       <div class="social-icons">
-        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-          <img src="github-icon.svg" alt="GitHub">
+        <a href="https://github.com/fimpert" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
         </a>
-        <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
-          <img src="instagram-icon.svg" alt="Instagram">
+        <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-          <img src="linkedin-icon.svg" alt="LinkedIn">
+    <!--   <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> -->
         </a>
       </div>
     </div>
   </div>
-
-  <button id="back-to-top" title="Back to Top">&#8679;</button>
 
   <div class="footer-bottom">
     <p>&copy; 2025 Fiona Impert. All rights reserved.</p>
   </div>
 </footer>
+
+</body>
 </html> 
