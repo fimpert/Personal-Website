@@ -235,6 +235,67 @@ h3 {
 
 /* end image wrap */
 
+/* start indexSplash */
+.introScreen {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black; /* fallback background for black bars */
+    overflow: hidden;
+}
+
+.introScreen .fullscreenImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.introScreen .introText {
+    position: relative;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: rgba(255, 255, 255, 0.845);
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    z-index: 1;
+    display: inline-block;
+    letter-spacing: 0.1em;  /* slightly more airy spacing */
+    word-spacing: 0.15em;
+}
+
+/* Create animated underline that expands from center */
+.introScreen .introText::after {
+    content: "";
+    position: absolute;
+    left: 50%;              /* start from center */
+    bottom: -5px;           /* distance below text */
+    height: 2px;            /* underline thickness */
+    width: 0;               /* collapsed initially */
+    background: rgba(255, 255, 255, 0.827);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Expand underline on hover */
+.introScreen .introText:hover::after {
+    width: 100%;            /* full width of text */
+    left: 0;                /* move start to left to expand outward from center */
+}
+
+/* Optional: mobile adjustment for text */
+@media (max-width: 768px) {
+    .introScreen .introText {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+}
+
+/* end indexSplash */
 
 /* start download button */
 /* this was adaptation from 3) Modern Download Button Design https://www.subframe.com/tips/css-download-button-examples */
