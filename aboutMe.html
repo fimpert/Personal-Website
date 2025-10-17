@@ -96,24 +96,23 @@
       });
 
 
+      document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("back-to-top");
 
-        document.addEventListener("DOMContentLoaded", () => {
-        const button = document.getElementById("back-to-top");
-
-        // Show button after scrolling
-        window.addEventListener("scroll", () => {
-        if (window.scrollY > 200) {
-            button.style.display = "flex";
+      // show/hide button on scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          button.style.display = "flex";   // show
         } else {
-            button.style.display = "none";
+          button.style.display = "none";   // hide
         }
-        });
+      });
 
-        // Scroll to top
-        button.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-         });
-        });
+      // smooth scroll to top on click
+      button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
     </script>
 
 <footer class="site-footer">
@@ -140,8 +139,8 @@
         <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-      <!--    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i> -->
+         <a href="https://www.linkedin.com/in/fiona-impert-651074389/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
         </a>
       </div>
     </div>
@@ -158,8 +157,8 @@
         <a href="https://instagram.com/fionaimpert" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-    <!--   <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i> -->
+        <a href="https://www.linkedin.com/in/fiona-impert-651074389/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> 
         </a>
       </div>
     </div>
