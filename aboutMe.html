@@ -102,13 +102,12 @@
       // show/hide button on scroll
       window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
-          button.style.display = "flex";   // show
+          button.style.display = "flex";   
         } else {
-          button.style.display = "none";   // hide
+          button.style.display = "none";  
         }
       });
-
-      // smooth scroll to top on click
+      
       button.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });

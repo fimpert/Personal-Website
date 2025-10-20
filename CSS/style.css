@@ -115,14 +115,6 @@
 }
 /* end tables */
 
-/* begin headings */
-h1, h2, h3, h4 {
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 12px;
-}
-/* end headings */
-
 /* start header */
 .site-header {
     width: 100%;
@@ -147,7 +139,6 @@ h1, h2, h3, h4 {
 
 .header-nav a {
     color: white;
-    text-decoration: none;
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -190,22 +181,25 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  cursor: url('Files/1.png'), url('Files/2.png'), auto;
+  cursor: url('../Files/2.png'), auto;
 }
 
 main {
   flex: 1;
 }
 
+h2, h3, p, span, a {
+  cursor: text;
+  text-align: center;
+  text-decoration: none;
+
+}
+
 h2 {
-    text-align: center;
-    margin: 3px;
     font-size: clamp(3rem, 5vw, 5rem);
 }
 
 h3 {
-    text-align: center;
-    margin: 3px;
     font-size: clamp(1.3rem, 2vw, 1.9rem);
     white-space: nowrap;
     overflow: hidden;
@@ -218,13 +212,14 @@ h3 {
 .introScreen {
     position: relative;
     width: 100%;
-    height: 100vh; /* full viewport height */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: black; /* fallback background for black bars */
+    background-color: black; 
     overflow: hidden;
+    cursor: pointer;
 }
 
 .introScreen .fullscreenImage {
@@ -240,34 +235,30 @@ h3 {
     position: relative;
     font-size: clamp(3rem, 6vw, 5rem);
     color: rgba(255, 255, 255, 0.845);
-    text-decoration: none;
-    cursor: url('Files/1.png'), url('Files/2.png'), auto;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 8px var(--shadow-color);
     z-index: 1;
     display: inline-block;
-    letter-spacing: 0.1em;  /* slightly more airy spacing */
+    letter-spacing: 0.1em;  
     word-spacing: 0.15em;
 }
 
-/* Create animated underline that expands from center */
 .introScreen .introText::after {
     content: "";
     position: absolute;
-    left: 50%;              /* start from center */
-    bottom: -5px;           /* distance below text */
-    height: 2px;            /* underline thickness */
-    width: 0;               /* collapsed initially */
+    left: 50%;            
+    bottom: -5px;          
+    height: 2px;         
+    width: 0;       
     background: rgba(255, 255, 255, 0.827);
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Expand underline on hover */
 .introScreen .introText:hover::after {
-    width: 100%;            /* full width of text */
-    left: 0;                /* move start to left to expand outward from center */
-}
+    width: 100%;         
+    left: 0;             
+  }
 
-/* Optional: mobile adjustment for text */
+/* mobile text adjustment */
 @media (max-width: 768px) {
     .introScreen .introText {
         font-size: clamp(2rem, 5vw, 3rem);
@@ -332,7 +323,7 @@ h3 {
     border-radius: 8px; 
     font-size: 14px; 
     font-weight: 500; 
-    cursor: url('Files/1.png') 0 0, auto;
+    cursor: pointer;
     display: flex; 
     align-items: center; 
     transition: background-color 0.3s ease;
@@ -405,19 +396,19 @@ h3 {
 
 /* end download + adaptation of code */
 
-/* Start Table (Project Index Specific) */
+/* start project-index spec*/
 .project-index {
-    background-color: #daadb7; /* Firebrick red */
-    min-height: 85vh; /* ensures spacing from footer */
+    min-height: 85vh; 
     width: 100%;
     flex-direction: column;
-    padding-bottom: 60px; /* mobile bottom spacing */
+    padding-bottom: 60px; 
 }
 
 .project-index table {
     width: 90%;
     max-width: 1000px;
     border-collapse: collapse;
+    cursor: text;
     background-color: rgba(255,255,255,0.95);
 }
 
@@ -444,7 +435,7 @@ h3 {
 
 .project-index a {
     color: #b22222;
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .project-index a:hover {
@@ -465,7 +456,7 @@ h3 {
         font-size: 20px;
     }
 }
-/* end table section */
+/* end project-index spec. section */
 
 /* start footer section */
 .site-footer {
@@ -482,12 +473,13 @@ h3 {
 }
 
 .footer-desktop h3 {
-  color: #d6336c; /* red-pink */
+  color: #d6336c; 
   margin-bottom: 8px;
+  cursor: text;
 }
 
 .site-footer ul {
-  list-style: none;   /* removes bullets */
+  list-style: none;   
   padding: 0;
   margin: 0;
 }
@@ -497,27 +489,27 @@ h3 {
 }
 
 .site-footer a {
-  color: #fff; /* white links */
-  text-decoration: none;
+  color: #fff; 
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 .site-footer a:hover,
 .site-footer a:active {
-  color: #d6336c; /* light blue hover */
+  color: #d6336c; 
 }
 
 
 .social-icons a {
   display: inline-block;
   margin: 0 12px;
-  font-size: 28px; /* size of icons */
+  font-size: 28px;
   color: #ffffff;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .social-icons a:hover {
-  color: #d6336c; /* red-pink on hover */
+  color: #d6336c; 
   transform: scale(1.2);
 }
 
@@ -574,7 +566,7 @@ h3 {
   right: 20px;
   width: 1.7em;
   height: 1.7em;
-  z-index: 99; /* ensures it stays above everything */
+  z-index: 99;
   display: none;
   background-color: #ff4d6d;
   color: var(--light-color);

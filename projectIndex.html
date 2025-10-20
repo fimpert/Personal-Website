@@ -18,7 +18,7 @@
 
 
     <main class="project-index flex-center padding-lg">
-        <table class=" table-responsive">
+        <table>
             <caption class="text-center"><h2>Project Index</h2></caption>
             <thead> 
                 <tr>
@@ -47,13 +47,12 @@
       // show/hide button on scroll
       window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
-          button.style.display = "flex";   // show
+          button.style.display = "flex";  
         } else {
-          button.style.display = "none";   // hide
+          button.style.display = "none";  
         }
       });
 
-      // smooth scroll to top on click
       button.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
@@ -78,7 +77,7 @@
 
             <div class="connect-section">
             <h3>Connect</h3>
-            <div class="social-icons">
+            <div cslass="social-icons">
                 <a href="https://github.com/fimpert" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
                 </a>
